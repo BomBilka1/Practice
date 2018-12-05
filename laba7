@@ -1,0 +1,23 @@
+import math
+def F(x):
+    return math.fabs(math.cos(k/2.7))+9.1*(math.sin(1.2*k+1))
+def G(x):
+    return math.fabs((math.sin(n/3.12))+(math.cos(n**2)))-8.3*math.sin(3*n)
+A=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+k1=1
+n1=1
+for k in range(4):
+    for n in range(4):
+        A[k][n]=round(n1*F(k1)+math.sin(k1)*G(n1),1)
+        if A[k][n]==0:
+            A[k][n]=1
+        k1=k1+1
+        n1=n1+1
+for i in range(4):
+    print(A[i])
+summ=0   
+for i in range(4):
+    for k in range(4):
+        if i>k:
+            summ+=A[i][k]
+print (summ)
