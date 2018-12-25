@@ -1,0 +1,8 @@
+def Func(n):
+      if n <= 1000000:
+            return n
+      elif n >= 10000000 or n <= 99999999:
+            return 1+Func(n/10)
+for i in range(5):
+      n=int(input("Введите число >>> "))
+print(Func(n))
