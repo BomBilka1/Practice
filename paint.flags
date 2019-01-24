@@ -1,0 +1,18 @@
+import turtle 
+from tkinter import * 
+root=Tk() 
+root.title('Flags') 
+root.geometry("1366x768") 
+rus=Canvas(root,bg='white',width=225,height=150) 
+Franc=Canvas(root,bg='white',width=225,height=150) 
+German=Canvas(root,bg='white',width=225,height=150) 
+rus.pack() 
+rus.create_rectangle(0,50,225,100,fill='blue') 
+rus.create_rectangle(0,150,225,100,fill='red') 
+Franc.pack() 
+Franc.create_rectangle(0,0,75,150,fill='blue') 
+Franc.create_rectangle(150,0,225,150,fill='red') 
+German.pack() 
+German.create_rectangle(0,0,225,100,fill='black') 
+German.create_rectangle(0,50,225,100,fill='red') 
+German.create_rectangle(0,150,225,100,fill='yellow')
