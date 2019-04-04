@@ -1,0 +1,14 @@
+names=["Ann","Bob","Elizabeth","Mr. McMullen","Mrs. Smith"]
+l=list(names)
+print(l)
+a = "Mr."
+a1 = "Mrs."
+for i in range(len(l)):  
+    if a in l[i]:
+        print(l[i])
+for i in range(len(l)):  
+    if a1 in l[i]:
+        print(l[i])
+while True:
+    for i in range(len(l)):
+        
