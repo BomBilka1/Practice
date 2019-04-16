@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+
+{
+double a;
+int a1, a2, a3, a4, p, h;
+std::cout<<"Введите четырехзначное число => ";
+std::cin>>a;
+
+a1=a/1000.0;
+
+a2=(a/100.0)-(a1*10.0);
+
+a3=(a/10.0)-(a1*100.0)-(a2*10.0);
+
+a4=(a/1.0)-(a1*1000.0)-(a2*100.0)-(a3*10.0);
+
+{
+	p=a1*a3;
+	h=a2*a4;
+}
+  
+cout<<endl;
+cout<<"Произведение четных цифр "<<h<<endl;
+cout<<"Произведение нечетных цифр "<<p<<endl;
+cout<<"Частное произведений "<<p/h<<" "<<h/p<<endl;
+
+return 0;
+}
