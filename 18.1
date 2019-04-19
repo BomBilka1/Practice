@@ -1,0 +1,19 @@
+school = dict()
+school['1a']='30'
+school['2a']='26'
+school['3a']='25'
+school['4a']='24'
+school['5a']='21'
+school['6a']='27'
+school['7a']='25'
+school['8a']='22'
+school['9a']='28'
+school['10a']='15'
+print('Выберети класс ')
+country = input()
+if country in school:
+    print('Количество человек в классе ', school[country])
+else:
+    print('В каком классе вы учитесь?')
+    klass = input()
+    school[country] = klass
