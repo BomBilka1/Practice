@@ -1,4 +1,3 @@
-from collections import Counter
 school = dict()
 school['1a']='30'
 school['2a']='26'
@@ -13,12 +12,8 @@ school['10a']='15'
 
 print('Выберети класс ')
 country = input()
-if country in school:
-    print('Количество человек в классе ', school[country])
-else:
-    print('Сколько человек в', country, 'классе?')
-    kol = input()
-    school[country] = kol
+print('Количество человек в классе ', school[country])
+
 print()
 print('В каком классе произошли изменения?')
 n = input()
