@@ -1,0 +1,42 @@
+masm
+model small
+.stack 256
+.data
+	sl1 dd 99569b42h, 0b7117f32h
+	sl2 dd 0caddb788h, 77885977h
+	res dd 2 dup(0)
+	oldb db 0
+.code
+begin:
+	mov ax,@data
+	mov ds,ax
+.386
+	;Вычитание
+	mov ax, word ptr sl1
+	sub ax, word ptr sl2
+	mov word ptr res, ax
+	mov ax, word ptr sl1+2
+	sbb ax, word ptr sl2+2
+	mov word ptr res+2, ax
+	mov ax, word ptr sl1+4
+	sbb ax, word ptr sl2+4
+	mov word ptr res+4, ax
+	mov ax, word ptr sl1+6
+	sbb ax, word ptr sl2+6
+	mov word ptr res+6, ax
+
+	;Сложение
+	mov eax, sl1
+	add eax, sl2
+	mov res, eax
+	mov eax, sl1+4
+	adc eax, sl2+4
+	mov res+4, eax
+	
+
+	adc oldb, 0
+	mov ax,4c00h
+	int 21h
+	
+	
+end begin
