@@ -1,0 +1,26 @@
+data segment
+message1 db "Enter your name -- $"
+message2 db 10,13, "Hello, $"
+Input db 20
+	db ?
+	db 20 dup(?)
+data ends
+stk segment stack
+	db 256 dup(?)
+stk ends
+code segment
+main:
+	assume cs: code,ds:data,ss:stk
+		mov ax,data
+		mov ds,ax
+		mov ah,9
+		lea dx,message1
+		int 21h
+		mov ah,10
+		lea dx,	Input
+		int 21h
+		mov bl,Input+1
+		mov bh,0
+		mov Input[bx+2],"$"
+		mov ah,9
+		lea dx,message2
