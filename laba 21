@@ -1,0 +1,31 @@
+try:
+        import random 
+        arr=[] 
+        file = open('middle.txt','w+') 
+        with open('middle.txt','a') as outputFile: 
+                for i in range (20): 
+                        a = str(random.randint(-9,1)) 
+                        outputFile.write(a) 
+                        outputFile.write('\n') 
+                        arr.append(a) 
+        contents=file.read() 
+        print(contents) 
+        file.close() 
+        print(arr) 
+        b=sorted(arr, key=int, reverse=True) 
+        for i in b: 
+                if int(i)<0: 
+                        p=arr.index(i)
+                        o=i
+                        z=p             
+                        file = open('second.txt','w+')
+                        with open('second.txt','a') as outputFile:
+                                outputFile.write(str(o))
+                                outputFile.write('\n')
+                                outputFile.write(str(z+1))
+                        contents=file.read()
+                        print(contents)
+                        file.close()
+                        break
+except:
+        print('error')
