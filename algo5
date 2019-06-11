@@ -1,60 +1,30 @@
-import random
-print("Task 1:")
-arr = []
-for i in range(10):
-    arr.append(random.randint(1, 10))
-print(arr)
-n = len(arr)
+task = {1: 50, 2: 40, 3: 100, 4: 75, 5: 10}
+time = [50, 40, 100, 75, 10]
+print("Время выполнения задач: ", task)
 left = 0
-right = n-1
-while(left <= right):
-    for i in range(right, left - 1, -1):
-        if(arr[i-1] > arr[i]):
-            temp = arr[i]
-            arr[i] = arr[i-1]
-            arr[i-1] = temp
-    left += 1
-    for i in range(left, right + 1):
-        if(arr[i-1] > arr[i]):
-            temp = arr[i]
-            arr[i] = arr[i-1]
-            arr[i-1] = temp
-    right -= 1
-print(arr)
-
-print("Task 2:")
-def sort(arr):
-    n = len(arr)
-    left = 0
-    right = n-1
-    while(left <= right):
-        for i in range(right, left - 1, -1):
-            if(arr[i-1] < arr[i]):
-                temp = arr[i]
-                arr[i] = arr[i-1]
-                arr[i-1] = temp
-        left += 1
-        for i in range(left, right + 1):
-            if(arr[i-1] < arr[i]):
-                temp = arr[i]
-                arr[i] = arr[i-1]
-                arr[i-1] = temp
-        right -= 1
-    return arr
-arr = [3, 7, 1, 6, 6]
-print(arr)
-while(len(arr) != 1):
-    sort(arr)
-    print("sort", arr)
-    for i in range(1, (len(arr))):
-        arr[0] -= 1
-        arr[i] -= 1
-    for i in range(len(arr)-1, -1, -1):
-        if(arr[i] == 0):
-            del arr[i]
-    if(len(arr) == 0):
-        print(arr)
-        break
-    elif(arr[0] < 0):
-        break
-    print(arr)
+right = len(time)-1
+def sort(arr, left, right):
+    lHold = left
+    rHold = right
+    mid = arr[int((lHold + rHold) / 2)]
+    while(lHold < rHold):
+        while(arr[lHold] < mid):
+            lHold += 1
+        while(arr[rHold] > mid):
+            rHold -= 1
+        if(lHold <= rHold):
+            temp = arr[lHold]
+            arr[lHold] = arr[rHold]
+            arr[rHold] = temp
+            lHold += 1
+            rHold -= 1
+    if(left < rHold):
+        sort(arr, left, rHold)
+    if(lHold < right):
+        sort(arr, lHold, right)
+sort(time, left, right)
+print("Сортировка", time)
+for i in time:
+    for j in task:
+        if(task[j] == i):
+            print("Задача:", j)
