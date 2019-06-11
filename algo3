@@ -1,0 +1,193 @@
+print("Task 1:")
+word = ['1', '1', '+', '1', '1', '+', '1', '1', '1']
+print(word)
+while('+' in word):
+    for i in range(len(word) - 1):
+        if(word[i] == '1' and word[i+1] == '+'):
+            word[i] = '+'
+            word[i + 1] = '1'
+            break
+    for i in range(len(word) - 1):    
+        if(word[i] == '+' and word[i+1] == '1'):
+            del word[i]
+            break
+    for i in range(len(word) - 1):    
+        if(word[i] == '1'):
+            word[i] = '1'
+            break
+print(word)
+print("Task 2:")
+word = ['a', 'b', 'b', 'b', 'c', 'a', 'a']
+stop = 1
+while(stop != 0):
+    for i in range(len(word) - 1):
+        if(word[i] == 'a' and word[i+1] == 'a'):
+            del word[i]
+            break
+    for i in range(len(word) - 1):
+        if(word[i] == 'b' and word[i+1] == 'b'):
+            del word[i]
+            break
+    for i in range(len(word) - 1):
+        if(word[i] == 'c' and word[i+1] == 'c'):
+            del word[i]
+            break
+    for i in range(len(word) - 1):
+        if(word[i] == word[i+1]):
+            stop = 1
+            break
+        else:
+            stop = 0
+print(word)
+print("Task 3:")
+word = ['*', 'c', 'a', 'r', 'w', 'e']
+for i in range(len(word) - 1):
+    for i in range(len(word) - 1):
+        if(word[i] == '*' and word[i+1] != '*'):
+            word[i], word[i + 1] = word[i + 1], word[i]
+            word.insert(i, word[i])
+            break
+    for i in range(len(word) - 1):
+        if(word[i] == '*'):
+            word[i] = '^'
+            break
+    for i in range(len(word) - 1):
+        if(word[i] == '^'):
+            word[i] = '*'
+            break
+print(word)
+print("Task 4:")
+word = ['d', 'a', 'b', 'a', 'd', 'b', 'c', 'a', 'd', 'c', 'b', 'd']
+stop = 1
+a = 0
+b = 0
+c = 0
+d = 0
+for i in word:
+    if(i == 'a'):
+        a += 1
+    elif(i == 'b'):
+        b += 1
+    elif(i == 'c'):
+        c += 1
+    else:
+        d += 1
+b += a
+c += b
+d += c
+while(stop != 0):
+    for i in range(len(word) - 1):
+        if(word[i] == 'b' and word[i+1] == 'a'):
+            word[i] = 'a'
+            word[i + 1] = 'b'
+            break
+    for i in range(len(word) - 1):
+        if(word[i] == 'c' and word[i+1] == 'a'):
+            word[i] = 'a'
+            word[i + 1] = 'c'
+            break
+    for i in range(len(word) - 1):
+        if(word[i] == 'd' and word[i+1] == 'a'):
+            word[i] = 'a'
+            word[i + 1] = 'd'
+            break
+    for i in range(len(word) - 1):
+        if(word[i] == 'c' and word[i+1] == 'b'):
+            word[i] = 'b'
+            word[i + 1] = 'c'
+            break
+    for i in range(len(word) - 1):
+        if(word[i] == 'd' and word[i+1] == 'b'):
+            word[i] = 'b'
+            word[i + 1] = 'd'
+            break
+    for i in range(len(word) - 1):
+        if(word[i] == 'd' and word[i+1] == 'c'):
+            word[i] = 'c'
+            word[i + 1] = 'd'
+            break
+    for i in range(a):
+        if(word[i] != 'a'):
+            stop = 1
+            break
+        else:
+            stop = 0
+    for i in range(a, b):
+        if(word[i] != 'b'):
+            stop = 1
+            break
+        else:
+            stop = 0
+    for i in range(b, c):
+        if(word[i] != 'c'):
+            stop = 1
+            break
+        else:
+            stop = 0
+    for i in range(c, d):
+        if(word[i] != 'd'):
+            stop = 1
+            break
+        else:
+            stop = 0
+print(word)
+print("Task 5")
+stop = 1
+word = ['(', ')', '(', ')', '(', '(', ')', ')', '(', '(', ')', '(', ')', ')', '(', '(', ')', ')']
+while(stop != 0):
+    for i in range(len(word) - 1):
+        if(word[i] == '*' and word[i + 1] == '*'):
+            del word[i]
+            break
+    for i in range(len(word) - 2):
+        if(word[i] == '(' and word[i + 1] == ')' and word[i + 2] == '*'):
+            del word[i + 1]
+            del word[i]
+            break
+    for i in range(len(word) - 2):
+        if(word[i] == '*' and word[i + 1] == '(' and word[i + 2] == ')'):
+            del word[i + 2]
+            del word[i + 1]
+            break
+    for i in range(len(word) - 2):
+        if(word[i] == '(' and word[i + 1] == '*' and word[i + 2] == ')'):
+            del word[i + 2]
+            del word[i]
+            break
+    for i in range(len(word) - 1):
+        if(word[i] == '(' and word[i + 1] == ')'):
+            word[i] = '*'
+            del word[i + 1]
+            break
+    if(len(word) == 1 and word[0] == '*'):
+        stop = 0
+print(word)
+print("Task 6:")
+word = ['1', '0', '0', '1', '1']
+stop = 1
+while(stop != 0):
+    for i in range(len(word) - 1):
+        if(word[i] == '|' and word[i + 1] == '0'):
+            word[i], word[i + 1] = word[i + 1], word[i]
+            word.insert(i + 2, word[i + 1])
+            break
+    print(word)
+    for i in range(len(word)):
+        if(word[i] == '1'):
+            word[i] = '0'
+            word.insert(i + 1, '|')
+            break
+    print(word)
+    for i in range(len(word) - 1):
+        if(word[i] == '0' and word[i + 1] == '|'):
+            del word[i]
+            break
+    print(word)
+    for i in range(len(word) - 1):
+        if(word[i] != word[i + 1]):
+            stop = 1
+            break
+        else:
+            stop = 0
+    print("--------------------")
+print(word)
