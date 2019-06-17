@@ -47,4 +47,6 @@ if __name__ == '__main__':
                 res += bigstr[ch]
             digitt = ''
         ch += 1
-    print (res)
+while res:
+    print(res[:40])
+    res = res[40:]
