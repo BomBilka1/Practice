@@ -1,9 +1,0 @@
-tasm /zi dirdan.asm
-tlink /v dirdan.obj
-pause
-
-
-and
-
-
-td dirdan.exe
