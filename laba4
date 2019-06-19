@@ -1,2 +1,0 @@
-word = 'Борноволоков Григорий Игоревич' 
-print(min(word.split(),key = len))
