@@ -5,13 +5,13 @@ using namespace std;
 int main()
 {
 	
-int a,b,x,y;
-cin>>a>>b>>x>>y; 
+int a,b,c,d;
+cin>>a>>b>>c>>d; 
 
-if (a+x == b + y || a + x + y == b)
+if (a+c == b + d || a + c + d == b)
 
-      cout<<(a+x);
+      cout<<(a+c);
 else
-      cout<<(a-x);
+      cout<<(a-c);
 	
 }
