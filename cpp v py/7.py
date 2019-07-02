@@ -1,7 +1,7 @@
 import math
-xm = int(input("Vvedite znachenie X nach: "))
-xk = int(input("Vvedite znachenie X kon: "))
-dx = int(input("Vvedite shag dx: "))
+xm = int(input("Введите значение X нач: "))
+xk = int(input("Введите значение X кон: "))
+dx = int(input("Введите шаг dx: "))
 r = 2
 if dx<=0:
     print("Шаг не может равнятся 0")
