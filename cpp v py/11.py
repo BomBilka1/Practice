@@ -11,14 +11,14 @@ sums=0
 for i in range(n):
     if arr[i]>=0:
         kol+=1
-print(kol)
+print("Кол-во пол.: ",kol)
 for i in range(n):
     if arr[i]==0:
         mins = arr[i];
         sums = 0
     else:
         sums += arr[i]
-print(sums)
+print("Сумма: ", sums)
 for i in range(n):
     for j in range(n):
         if arr[i]<arr[j]:
